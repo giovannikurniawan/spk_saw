@@ -20,10 +20,10 @@ class KriteriaController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request->all(),[
+        $this->validate($request,[
             'nama_kriteria' => 'required|string',
             'attribut'      => 'required|string',
-            'bobot'         => 'required|number',
+            'bobot'         => 'required|numeric',
         ]);
 
         try {
@@ -32,7 +32,7 @@ class KriteriaController extends Controller
             $kriteria->attribut = $request->attribut;
             $kriteria->bobot = $request->bobot;
             $kriteria->save();
-            return back()->with(['msg', 'Berhasil menambahkan data']);
+            return back()->with('msg', 'Berhasil menambahkan data');
 
         } catch (Exception $e) {
             \Log::emergency("File:" . $e->getFile().  "Line:" . $e->getLine(). "Message:". 
@@ -43,16 +43,16 @@ class KriteriaController extends Controller
 
     public function edit($id) 
     {
-        $data[] = Kriteria::findorFail($id);
+        $data['kriteria'] = Kriteria::findorFail($id);
         return view('admin.kriteria.edit', $data);
     }
 
     public function update(Request $request, $id) 
     {
-        $this->validate($request->all(),[
+        $this->validate($request, [
             'nama_kriteria' => 'required|string',
             'attribut'      => 'required|string',
-            'bobot'         => 'required|number',
+            'bobot'         => 'required|numeric',
         ]);
 
         try {
@@ -62,7 +62,7 @@ class KriteriaController extends Controller
                 'attribut'      => $request->attribut,
                 'bobot'      => $request->bobot,
             ]);
-            return back()->with(['msg', 'Berhasil merubah data']);
+            return back()->with('msg', 'Berhasil merubah data');
 
         } catch (Exception $e) {
             \Log::emergency("File:" . $e->getFile().  "Line:" . $e->getLine(). "Message:". 
