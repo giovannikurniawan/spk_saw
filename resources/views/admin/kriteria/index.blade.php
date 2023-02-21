@@ -84,6 +84,8 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Kriteria</th>
+                                        <th>Attribut</th>
+                                        <th>Bobot</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -95,6 +97,8 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $row->nama_kriteria }}</td>
+                                            <td>{{ $row->attribut }}</td>
+                                            <td>{{ $row->bobot }}</td>
                                             <td>
                                                 <a href="{{ route('kriteria.edit', $row->id) }}"
                                                     class="btn btn-sm btn-circle btn-warning"><i class="fa fa-edit"></i></a>
@@ -118,9 +122,43 @@
     <!-- Page level plugins -->
     <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $('#DataTable').DataTable();
-        });
+
+            $('.hapus').on('click', function() {
+                swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover this imaginary file!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $.ajax({
+                                url: $(this).attr('href'),
+                                type: 'DELETE',
+                                data: {
+                                    '_token': "{{ csrf_token() }}"
+                                },
+                                success: function() {
+                                    swal("Poof! Your imaginary file has been deleted!", {
+                                        icon: "success",
+                                    }).then((willDelete) => {
+                                        window.location =
+                                            "{{ route('kriteria.index') }}"
+                                    });
+                                }
+                            })
+
+                        } else {
+                            swal("Your imaginary file is safe!");
+                        }
+                    });
+                return false;
+            })
+        })
     </script>
 @stop

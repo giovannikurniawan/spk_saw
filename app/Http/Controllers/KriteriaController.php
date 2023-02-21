@@ -76,7 +76,7 @@ class KriteriaController extends Controller
         try {
             $kriteria = findFail($id);
             $kriteria->delete();
-            return back()->with(['msg', 'Berhasil merubah data']);
+            return back()->with('msg', 'Berhasil merubah data');
 
         } catch (Exception $e) {
             \Log::emergency("File:" . $e->getFile().  "Line:" . $e->getLine(). "Message:". 
