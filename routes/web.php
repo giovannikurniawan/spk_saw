@@ -1,6 +1,9 @@
 <?php
 
+// use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\KriteriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +24,4 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource("kriteria","KriteriaController");
+Route::resource("alternatif","AlternatifController");

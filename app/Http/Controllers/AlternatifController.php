@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Kriteria;
 
 use Illuminate\Http\Request;
+use App\Alternatif;
 
-class KriteriaController extends Controller
+class AlternatifController extends Controller
 {
     public function __construct()
     {
@@ -14,24 +14,20 @@ class KriteriaController extends Controller
 
     public function index() 
     {
-        $data['kriteria'] = Kriteria::orderBy('nama_kriteria','ASC')->get();
-        return view('admin.kriteria.index',$data);
+        $data['alternatif'] = Alternatif::get();
+        return view('admin.alternatif.index',$data);
     }
 
     public function store(Request $request)
     {
         $this->validate($request,[
-            'nama_kriteria' => 'required|string',
-            'attribut'      => 'required|string',
-            'bobot'         => 'required|numeric',
+            'nama_alternatif' => 'required|string',
         ]);
 
         try {
-            $kriteria = new Kriteria();
-            $kriteria->nama_kriteria = $request->nama_kriteria;
-            $kriteria->attribut = $request->attribut;
-            $kriteria->bobot = $request->bobot;
-            $kriteria->save();
+            $alternatif = new Alternatif();
+            $alternatif->nama_alternatif = $request->nama_alternatif;
+            $alternatif->save();
             return back()->with('msg', 'Berhasil menambahkan data');
 
         } catch (Exception $e) {
@@ -43,24 +39,20 @@ class KriteriaController extends Controller
 
     public function edit($id) 
     {
-        $data['kriteria'] = Kriteria::findorFail($id);
-        return view('admin.kriteria.edit', $data);
+        $data['alternatif'] = Alternatif::findorFail($id);
+        return view('admin.alternatif.edit', $data);
     }
 
     public function update(Request $request, $id) 
     {
         $this->validate($request, [
-            'nama_kriteria' => 'required|string',
-            'attribut'      => 'required|string',
-            'bobot'         => 'required|numeric',
+            'nama_alternatif' => 'required|string',
         ]);
 
         try {
-            $kriteria = Kriteria::findOrFail($id);
-            $kriteria->update([
-                'nama_kriteria' => $request->nama_kriteria,
-                'attribut'      => $request->attribut,
-                'bobot'      => $request->bobot,
+            $alternatif = Alternatif::findOrFail($id);
+            $alternatif->update([
+                'nama_alternatif' => $request->nama_alternatif,
             ]);
             return back()->with('msg', 'Berhasil merubah data');
 
@@ -74,8 +66,8 @@ class KriteriaController extends Controller
     public function destroy($id)
     {
         try {
-            $kriteria = Kriteria::findOrFail($id);
-            $kriteria->delete();
+            $alternatif = Alternatif::findOrFail($id);
+            $alternatif->delete();
         } catch (Exception $e) {
             \Log::emergency("File:" . $e->getFile().  "Line:" . $e->getLine(). "Message:". 
             $e->getMassage());

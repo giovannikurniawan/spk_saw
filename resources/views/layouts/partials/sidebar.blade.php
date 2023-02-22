@@ -27,7 +27,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{ route('alternatif.index') }}">
             <i class="fas fa-fw fa-users"></i>
             <span>Alternatif</span></a>
     </li>
