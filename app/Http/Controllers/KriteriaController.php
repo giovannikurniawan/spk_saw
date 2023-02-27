@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Kriteria;
+use App\Crips;
 
 use Illuminate\Http\Request;
 
@@ -81,5 +82,12 @@ class KriteriaController extends Controller
             $e->getMassage());
             die("Gagal");
         }
+    }
+
+    public function show ($id)
+    {
+        $data['crips'] = Crips::where('kriteria_id',$id)->get();
+        $data['kriteria'] = Kriteria::findOrFail($id);
+        return view('admin.kriteria.show',$data);
     }
 }

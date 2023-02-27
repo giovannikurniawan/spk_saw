@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'SPK SAW | Kriteria')
+@section('title', 'SPK SAW | ' . $kriteria->nama_kriteria)
 @section('css')
     <!-- Custom styles for this page -->
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
@@ -9,12 +9,12 @@
         <div class="col-md-4">
             <div class="card shadow mb-4">
                 <!-- Card Header - Accordion -->
-                <a href="#tambahkriteria" class="d-block card-header py-3" data-toggle="collapse" role="button"
+                <a href="#tambahcrips" class="d-block card-header py-3" data-toggle="collapse" role="button"
                     aria-expanded="true" aria-controls="collapseCardExample">
-                    <h6 class="m-0 font-weight-bold text-primary">Tambah Kriteria</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Tambah Crips</h6>
                 </a>
                 <!-- Card Content - Collapse -->
-                <div class="collapse show" id="tambahkriteria">
+                <div class="collapse show" id="tambahcrips">
                     <div class="card-body">
                         @if (Session::has('msg'))
                             <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -24,36 +24,24 @@
                                 </button>
                             </div>
                         @endif
-                        <form action="{{ route('kriteria.store') }}" method="post">
+                        <form action="{{ route('crips.store') }}" method="post">
                             @csrf
+                            <input type="hidden" value="{{ $kriteria->id }}" name="kriteria_id">
                             <div class="form-group">
-                                <label for="nama">Nama Kriteria</label>
-                                <input type="text" class="form-control @error('nama_kriteria') is-invalid @enderror"
-                                    name="nama_kriteria">
+                                <label for="nama">Nama Crips</label>
+                                <input type="text" class="form-control @error('nama_crips') is-invalid @enderror"
+                                    name="nama_crips" value="{{ old('nama_crips') }}">
 
-                                @error('nama_kriteria')
+                                @error('nama_crips')
                                     <div class="invalid-feedback" role="alert">
                                         {{ $message }}
                                     </div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="nama">Attribut Kriteria</label>
-                                <select name="attribut" id="" class="form-control" required>
-                                    <option>Benefit</option>
-                                    <option>Cost</option>
-                                </select>
-
-                                @error('attribut')
-                                    <div class="invalid-feedback" role="alert">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="nama">Bobot Kriteria</label>
+                                <label for="nama">Bobot Crips</label>
                                 <input type="text" class="form-control @error('bobot') is-invalid @enderror"
-                                    name="bobot">
+                                    name="bobot" value="{{ old('bobot') }}">
 
                                 @error('bobot')
                                     <div class="invalid-feedback" role="alert">
@@ -73,7 +61,7 @@
                 <!-- Card Header - Accordion -->
                 <a href="#listkriteria" class="d-block card-header py-3" data-toggle="collapse" role="button"
                     aria-expanded="true" aria-controls="collapseCardExample">
-                    <h6 class="m-0 font-weight-bold text-primary">List Kriteria</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">List Crips</h6>
                 </a>
                 <!-- Card Content - Collapse -->
                 <div class="collapse show" id="listkriteria">
@@ -83,8 +71,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Kriteria</th>
-                                        <th>Attribut</th>
+                                        <th>Nama Crips</th>
                                         <th>Bobot</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -93,18 +80,15 @@
                                     @php
                                         $no = 1;
                                     @endphp
-                                    @foreach ($kriteria as $row)
+                                    @foreach ($crips as $row)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $row->nama_kriteria }}</td>
-                                            <td>{{ $row->attribut }}</td>
+                                            <td>{{ $row->nama_crips }}</td>
                                             <td>{{ $row->bobot }}</td>
                                             <td>
-                                                <a href="{{ route('kriteria.show', $row->id) }}"
-                                                    class="btn btn-sm btn-circle btn-info"><i class="fa fa-eye"></i></a>
-                                                <a href="{{ route('kriteria.edit', $row->id) }}"
+                                                <a href="{{ route('crips.edit', $row->id) }}"
                                                     class="btn btn-sm btn-circle btn-warning"><i class="fa fa-edit"></i></a>
-                                                <a href="{{ route('kriteria.destroy', $row->id) }}"
+                                                <a href="{{ route('crips.destroy', $row->id) }}"
                                                     class="btn btn-sm btn-circle btn-danger hapus"><i
                                                         class="fa fa-trash"></i></a>
 
@@ -150,7 +134,7 @@
                                         icon: "success",
                                     }).then((willDelete) => {
                                         window.location =
-                                            "{{ route('kriteria.index') }}"
+                                            "{{ route('kriteria.show', $kriteria->id) }}"
                                     });
                                 }
                             })

@@ -23,5 +23,6 @@ use App\Http\Controllers\KriteriaController;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::resource("kriteria","KriteriaController");
-Route::resource("alternatif","AlternatifController");
+Route::resource("kriteria","KriteriaController")->except(['create']);
+Route::resource("alternatif","AlternatifController")->except(['create','show']);
+Route::resource("crips","CripsController")->except(['index','create','show']);
