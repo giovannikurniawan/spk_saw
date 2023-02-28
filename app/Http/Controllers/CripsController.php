@@ -32,9 +32,7 @@ class CripsController extends Controller
     public function edit($id)
     {
         $data['crips'] = Crips::findOrFail($id);
-        $data['kriteria'] = Kriteria::get();
-
-        return view('admin.crips.edit');
+        return view('admin.crips.edit', $data);
 
     }
 
@@ -43,7 +41,6 @@ class CripsController extends Controller
         try {
             $crips = Crips::findOrFail($id);
             $crips->update([
-                'kriteria_id' => $request->kriteria_id,
                 'nama_crips'  => $request->nama_crips,
                 'bobot'       => $request->bobot
             ]);
