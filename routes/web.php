@@ -16,15 +16,19 @@ use App\Http\Controllers\KriteriaController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::resource("kriteria","KriteriaController")->except(['create']);
 Route::resource("alternatif","AlternatifController")->except(['create','show']);
 Route::resource("crips","CripsController")->except(['index','create','show']);
 // Route::get('/penilaian','PenilaianController@index')->name('penilaian.index');
 Route::resource('/penilaian','PenilaianController');
+Route::get('/perhitungan', 'AlgoritmaController@index')->name('perhitungan.index');
+// Route::resource('/halaman-list-user','HalamanListUserController')->except(['create']);
+Route::get('/halaman-admin', 'HalamanAdminController@index');
+// Route::get('/halaman-admin-add', 'HalamanAdminController@add');

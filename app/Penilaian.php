@@ -13,4 +13,8 @@ class Penilaian extends Model
     {
         return $this->belongsTo(Crips::class, 'crips_id');
     }
+    public function alternatif()
+    {
+        return $this->belongsTo(Alternatif::class, 'alternatif_id');
+    }
 }

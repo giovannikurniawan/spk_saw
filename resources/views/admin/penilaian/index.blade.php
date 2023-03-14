@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'SPK SAW | Kriteria')
+@section('title', 'SPK SAW | Penilaian Alternatif')
 @section('content')
     <div class="card shadow mb-4">
         <!-- Card Header - Accordion -->

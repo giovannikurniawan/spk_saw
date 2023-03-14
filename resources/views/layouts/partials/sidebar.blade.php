@@ -39,8 +39,36 @@
             <span>Penilaian</span></a>
     </li>
 
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('perhitungan.index') }}">
+            <i class="fas fa-fw fa-list"></i>
+            <span>Perhitungan</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
+
+    {{-- <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Halaman Admin</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Custom Utilities:</h6>
+                <a class="collapse-item" href="utilities-color.html">List Admin</a>
+                <a class="collapse-item" href="utilities-border.html">List User</a>
+                <a class="collapse-item" href="utilities-animation.html">Tambah Alternatif</a>
+                <a class="collapse-item" href="utilities-other.html">Other</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block"> --}}
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
