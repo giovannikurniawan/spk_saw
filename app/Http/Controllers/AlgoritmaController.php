@@ -56,6 +56,12 @@ class AlgoritmaController extends Controller
                 $rank[$key][] =$value[$value_1->id] * $value_1->bobot;
             }
         }
-        return view('admin.perhitungan.index', compact('alternatif','kriteria','normalisasi','rank'));
+        $ranking = $normalisasi;
+        foreach ($normalisasi as $key => $value) {
+            $ranking[$key][] = array_sum($rank[$key]);
+        }
+        arsort($ranking);
+
+        return view('admin.perhitungan.index', compact('alternatif','kriteria','normalisasi','ranking'));
     }
 }

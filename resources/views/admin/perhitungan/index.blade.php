@@ -23,7 +23,7 @@
                         @csrf
                         <button class="btn btn-sm btn-primary float-right">Simpan</button>
                         <br><br> --}}
-                    <table class="table">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Nama Alternatif</th>
@@ -65,20 +65,20 @@
         <!-- Card Content - Collapse -->
         <div class="collapse show" id="normalisasi">
             <div class="card-body">
-                @if (Session::has('msg'))
+                {{-- @if (Session::has('msg'))
                     <div class="alert alert-info alert-dismissible fade show" role="alert">
                         <strong>Info!</strong> {{ Session::get('msg') }}
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                @endif
+                @endif --}}
                 <div class="table-responsive">
                     {{-- <form action="{{ route('penilaian.store') }}" method="post">
                         @csrf
                         <button class="btn btn-sm btn-primary float-right">Simpan</button>
                         <br><br> --}}
-                    <table class="table">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Alternatif / Kriteria</th>
@@ -93,11 +93,68 @@
                                     <td>{{ $key }}</td>
                                     @foreach ($value as $key_1 => $value_1)
                                         <td>
-                                            {{ $value_1 }}
+                                            @if ($value[count($value) - 1] != $key_1)
+                                                {{ $value_1 }}
+                                            @endif
                                         </td>
                                     @endforeach
                                 </tr>
                             @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card shadow mb-4">
+        <!-- Card Header - Accordion -->
+        <a href="#rank" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true"
+            aria-controls="collapseCardExample">
+            <h6 class="m-0 font-weight-bold text-primary">Tahap Perengkingan</h6>
+        </a>
+        <!-- Card Content - Collapse -->
+        <div class="collapse show" id="rank">
+            <div class="card-body">
+                {{-- @if (Session::has('msg'))
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <strong>Info!</strong> {{ Session::get('msg') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif --}}
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                @foreach ($kriteria as $key => $value)
+                                    <th>{{ $value->nama_kriteria }}</th>
+                                @endforeach
+                                <th rowspan="2" style="text-align: center; padding-bottom:45px;">Total</th>
+                                <th rowspan="2" style="text-align: center; padding-bottom:45px;">Rank</th>
+                            </tr>
+                            <tr>
+                                <th>Bobot</th>
+                                @foreach ($kriteria as $key => $value)
+                                    <th>{{ $value->bobot }}</th>
+                                @endforeach
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                                $no = 1;
+                            @endphp
+                            @foreach ($ranking as $key => $value)
+                                <tr>
+                                    <td>{{ $key }}</td>
+                                    @foreach ($value as $key_1 => $value_1)
+                                        <td>{{ number_format($value_1, 1) }}</td>
+                                    @endforeach
+                                    <td>{{ $no++ }}</td>
+                                </tr>
+                            @endforeach
+                            <tr></tr>
                         </tbody>
                     </table>
                     {{-- </form> --}}

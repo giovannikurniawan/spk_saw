@@ -26,7 +26,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Nama Alternatif</th>
+                                    {{-- <th>Nama Alternatif</th> --}}
                                     @foreach ($kriteria as $key => $value)
                                         <th>{{ $value->nama_kriteria }}</th>
                                     @endforeach
@@ -35,7 +35,7 @@
                             <tbody>
                                 @forelse ($alternatif as $alt => $valt)
                                     <tr>
-                                        <td>{{ $valt->nama_alternatif }}</td>
+                                        {{-- <td>{{ $valt->nama_alternatif }}</td> --}}
                                         @if (count($valt->penilaian) > 0)
                                             @foreach ($kriteria as $key => $value)
                                                 <td>
