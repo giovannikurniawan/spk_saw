@@ -107,7 +107,6 @@
                                                 <a href="{{ route('kriteria.destroy', $row->id) }}"
                                                     class="btn btn-sm btn-circle btn-danger hapus"><i
                                                         class="fa fa-trash"></i></a>
-
                                             </td>
                                         </tr>
                                     @endforeach

@@ -60,8 +60,7 @@ class AlgoritmaController extends Controller
         foreach ($normalisasi as $key => $value) {
             $ranking[$key][] = array_sum($rank[$key]);
         }
-        arsort($ranking);
-
+        arsort($ranking);;
         return view('admin.perhitungan.index', compact('alternatif','kriteria','normalisasi','ranking'));
     }
 }

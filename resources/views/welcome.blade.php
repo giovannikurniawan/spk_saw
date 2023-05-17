@@ -33,6 +33,9 @@
     {{-- <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet"> --}}
     <!-- Template Main CSS File -->
     <link href="{{ asset('Arsha/assets/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 </head>
 
@@ -72,7 +75,7 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li> --}}
-                    <li><a class="getstarted scrollto" href="{{ route('login') }}">Login</a></li>
+                    <li><a class="getstarted scrollto" href="{{ route('login') }}">Login as Admin</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -146,7 +149,7 @@
         </section><!-- End Cliens Section -->
 
         <!-- ======= About Us Section ======= -->
-        <section id="#" class="about">
+        {{-- <section id="#" class="about">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
@@ -182,7 +185,7 @@
                 </div>
 
             </div>
-        </section><!-- End About Us Section -->
+        </section><!-- End About Us Section --> --}}
 
         <!-- ======= Daftar Produk Section ======= -->
         <section id="daftar-produk" class="about">
@@ -192,188 +195,143 @@
                     <h2>Daftar Produk</h2>
                 </div>
 
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="DataTable">
-                        <thead class="thead-dark">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Produk</th>
+                            <th>Gambar</th>
+                            <th>Harga</th>
+                            <th>Tekstur</th>
+                            <th>Waktu Pengerasan</th>
+                            <th>Warna</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($SemenList as $data)
                             <tr>
-                                <th>Nama Produk</th>
-                                <th>Gambar</th>
-                                <th>Harga</th>
-                                <th>Tekstur</th>
-                                <th>Waktu Pengerasan</th>
-                                <th>Warna</th>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $data->nama_semen }}</td>
+                                <td><img src="{{ asset("gambar-semen/{$data->gambar_semen}") }}" width="60">
+                                </td>
+                                <td>{{ $data->harga_semen }}</td>
+                                <td>{{ $data->tekstur_semen }}</td>
+                                <td>{{ $data->waktu_semen }}</td>
+                                <td>{{ $data->warna_semen }}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Semen Tiga Roda</td>
-                                <td><img src="{{ asset('gambar-semen/semen-tiga-roda.jpg') }}"
-                                        alt="description of myimage" style="width: 100px"></td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011-04-25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Semen Holcim</td>
-                                <td><img src="{{ asset('gambar-semen/jual-semen-holcim.jpg') }}"
-                                        alt="description of myimage" style="width: 100px"></td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011-07-25</td>
-                                <td>$170,750</td>
-                            </tr>
-                            <tr>
-                                <td>Semen Gresik</td>
-                                <td><img src="{{ asset('gambar-semen/semen-gresik.jpeg') }}"
-                                        alt="description of myimage" style="width: 100px"></td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011-07-25</td>
-                                <td>$170,750</td>
-                            </tr>
-                            <tr>
-                                <td>Semen Padang</td>
-                                <td><img src="{{ asset('gambar-semen/semen-padang.jpg') }}"
-                                        alt="description of myimage" style="width: 100px"></td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011-07-25</td>
-                                <td>$170,750</td>
-                            </tr>
-                            <tr>
-                                <td>Semen Garuda</td>
-                                <td><img src="{{ asset('gambar-semen/Semen-garuda.jpg') }}"
-                                        alt="description of myimage" style="width: 100px"></td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011-07-25</td>
-                                <td>$170,750</td>
-                            </tr>
-                            <tr>
-                                <td>Semen Merah Putih</td>
-                                <td><img src="{{ asset('gambar-semen/semen-merah-putih.png') }}"
-                                        alt="description of myimage" style="width: 100px"></td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011-07-25</td>
-                                <td>$170,750</td>
-                            </tr>
-                            <tr>
-                                <td>Semen Jakarta</td>
-                                <td><img src="{{ asset('gambar-semen/Semen-Jakarta.jpg') }}"
-                                        alt="description of myimage" style="width: 100px"></td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011-07-25</td>
-                                <td>$170,750</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        @endforeach
+                    </tbody>
+                </table>
+
         </section><!-- End About Us Section -->
 
         <!-- ======= Halaman Rekomendasi Section ======= -->
+
         <section id="Halaman-Rekomendasi" class="about">
-            {{-- <div class="container" data-aos="fade-up">
+            <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
                     <h2>Halaman Rekomendasi</h2>
                 </div>
 
-                <form>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Harga</label>
-                        <br>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option value="0">Pilih Bobot Kriteria</option>
-                            <option value='5'>5. Sangat Penting</option>
-                            <option value='4'>4. Penting</option>
-                            <option value='3'>3. Cukup Penting</option>
-                            <option value='2'>2. Tidak Penting</option>
-                            <option value='1'>1. Sangat Tidak Penting</option>
-                        </select>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Tekstur</label>
-                        <br>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option value="0">Pilih Bobot Kriteria</option>
-                            <option value='5'>5. Sangat Penting</option>
-                            <option value='4'>4. Penting</option>
-                            <option value='3'>3. Cukup Penting</option>
-                            <option value='2'>2. Tidak Penting</option>
-                            <option value='1'>1. Sangat Tidak Penting</option>
-                        </select>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Waktu Pengerasan</label>
-                        <br>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option value="0">Pilih Bobot Kriteria</option>
-                            <option value='5'>5. Sangat Penting</option>
-                            <option value='4'>4. Penting</option>
-                            <option value='3'>3. Cukup Penting</option>
-                            <option value='2'>2. Tidak Penting</option>
-                            <option value='1'>1. Sangat Tidak Penting</option>
-                        </select>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Tekstur</label>
-                        <br>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option value="0">Pilih Bobot Kriteria</option>
-                            <option value='5'>5. Sangat Penting</option>
-                            <option value='4'>4. Penting</option>
-                            <option value='3'>3. Cukup Penting</option>
-                            <option value='2'>2. Tidak Penting</option>
-                            <option value='1'>1. Sangat Tidak Penting</option>
-                        </select>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Standar</label>
-                        <br>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option value="0">Pilih Bobot Kriteria</option>
-                            <option value='5'>5. Sangat Penting</option>
-                            <option value='4'>4. Penting</option>
-                            <option value='3'>3. Cukup Penting</option>
-                            <option value='2'>2. Tidak Penting</option>
-                            <option value='1'>1. Sangat Tidak Penting</option>
-                        </select>
-                    </div>
-                </form>
-                <br>
-                <button type="button" class="btn btn-success">Kirim</button> --}}
+                @foreach ($KriteriaList as $kriteria)
+                    <form action="{{ route('kriteria.update', $kriteria->id) }}" method="post">
+                        @csrf
+                        @method('PUT')
+                        <div class="form-group">
+                            <label for="nama">Nama Kriteria</label>
+                            <input type="text" class="form-control @error('nama_kriteria') is-invalid @enderror"
+                                name="nama_kriteria" value="{{ $kriteria->nama_kriteria }}">
+
+                            @error('nama_kriteria')
+                                <div class="invalid-feedback" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Attribut Kriteria</label>
+                            <select name="attribut" id="attribut" class="form-control" required>
+                                <option {{ $kriteria->attribut == 'Benefit' ? 'selected' : '' }}>Benefit</option>
+                                <option {{ $kriteria->attribut == 'Cost' ? 'selected' : '' }}>Cost</option>
+                            </select>
+
+                            @error('attribut')
+                                <div class="invalid-feedback" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Bobot Kriteria</label>
+                            <input type="text" class="form-control @error('bobot') is-invalid @enderror"
+                                name="bobot" value="{{ $kriteria->bobot }}">
+
+                            @error('bobot')
+                                <div class="invalid-feedback" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <button class="btn btn-sm btn-primary">Simpan</button>
+                    </form>
+                @endforeach
             </div>
-        </section><!-- End About Us Section -->
+        </section>
+
+
+
+        {{-- 
+                @foreach ($KriteriaList as $item)
+                    <form action="{{ route('kriteria.update', $item->id) }}" method="post">
+                        @csrf
+                        @method('put')
+                        <div class="form-group">
+                            <label for="nama">Nama Kriteria</label>
+                            <input type="text" class="form-control @error('nama_kriteria') is-invalid @enderror"
+                                name="nama_kriteria" value="{{ $item->nama_kriteria }}">
+
+                            @error('nama_kriteria')
+                                <div class="invalid-feedback" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Attribut Kriteria</label>
+                            <select name="attribut" id="attribut" class="form-control" required>
+                                <option {{ $item->attribut == 'Benefit' ? 'selected' : '' }}>Benefit</option>
+                                <option {{ $item->attribut == 'Cost' ? 'selected' : '' }}>Cost</option>
+                            </select>
+
+                            @error('attribut')
+                                <div class="invalid-feedback" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Bobot Kriteria</label>
+                            <input type="text" class="form-control @error('bobot') is-invalid @enderror"
+                                name="bobot" value="{{ $item->bobot }}">
+
+                            @error('bobot')
+                                <div class="invalid-feedback" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                @endforeach
+                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Kirim
+                </button>
+                <button type="reset" class="btn btn-danger"><i class="fa fa-repeat"></i> Reset </button>
+                </form> --}}
+
 
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-
-        {{-- <div class="footer-newsletter">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="footer-top">
             <div class="container">
@@ -426,14 +384,18 @@
 
                 </div>
             </div>
-        </div> --}}
+        </div>
 
         <div class="container footer-bottom clearfix">
             <div class="copyright">
-                &copy; Copyright <strong><span>Giovanni Kurniawan - 00000028665</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
-
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
             </div>
         </div>
     </footer><!-- End Footer -->

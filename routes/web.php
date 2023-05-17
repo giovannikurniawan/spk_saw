@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\KriteriaController;
+use App\Http\Controllers\SemenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,9 @@ Route::get('/perhitungan', 'AlgoritmaController@index')->name('perhitungan.index
 // Route::resource('/halaman-list-user','HalamanListUserController')->except(['create']);
 Route::get('/halaman-admin', 'HalamanAdminController@index');
 // Route::get('/halaman-admin-add', 'HalamanAdminController@add');
+Route::resource("/","WelcomeController");
+// Route::put("/","WelcomeController")->except(['create']);
+// Route::get('/', 'WelcomeController@index');
+// Route::get('/', 'WelcomeController@store');
+// Route::get('/halaman-rekomendasi', 'WelcomeController@index');
+
