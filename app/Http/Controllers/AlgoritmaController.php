@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Alternatif;
 use App\Kriteria;
-use APP\Penilaian;
+use App\Penilaian;
 
 class AlgoritmaController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    public $ranking; // Tambahkan properti $ranking
+
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     public function index()
     {
         $alternatif = Alternatif::with('penilaian.crips')->get();
@@ -60,7 +62,10 @@ class AlgoritmaController extends Controller
         foreach ($normalisasi as $key => $value) {
             $ranking[$key][] = array_sum($rank[$key]);
         }
-        arsort($ranking);;
+        arsort($ranking);
+
+         $this->ranking = $ranking; // Tetapkan nilai $ranking ke dalam properti $ranking
+
         return view('admin.perhitungan.index', compact('alternatif','kriteria','normalisasi','ranking'));
     }
 }

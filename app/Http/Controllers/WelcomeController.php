@@ -1,19 +1,40 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\AlgoritmaController;
 
 use Illuminate\Http\Request;
 use App\Semen;
 use App\Kriteria;
+use App\Alternatif;
+use APP\Penilaian;
 
 class WelcomeController extends Controller
 {
-	 public function index()
-    {
-        $semen = Semen::all();
-        $kriteria = Kriteria::all();
-        return view('welcome')->with(['SemenList' => $semen, 'KriteriaList' => $kriteria]);
-    }
+
+   protected $algoritmaController;
+   public $ranking; // Tambahkan properti $ranking
+
+public function __construct(AlgoritmaController $algoritmaController)
+{
+    $this->algoritmaController = $algoritmaController;
+    $this->ranking = $this->algoritmaController->ranking;
+    // $this->ranking = $this->algoritmaController->rankingData; // Mengakses properti $ranking dari AlgoritmaController
+}
+
+public function index()
+{
+    $semen = Semen::all();
+    $kriteria = Kriteria::all();
+
+    
+    
+    $ranking = $this->ranking; // Mengakses properti $ranking yang telah diinisialisasi dalam konstruktor
+    // dd($ranking); // Tampilkan nilai $ranking dalam bentuk array untuk memeriksa isinya
+
+    return view('welcome')->with(['SemenList' => $semen, 'KriteriaList' => $kriteria, 'ranking' => $ranking]);
+}
+
 
      public function store(Request $request)
     {
@@ -67,4 +88,5 @@ class WelcomeController extends Controller
             die("Gagal");
         }
     }
+
 }

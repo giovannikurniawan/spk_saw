@@ -40,46 +40,23 @@
 </head>
 
 <body>
-
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="{{ asset('Arsha/index.html') }}">SPK-SEMEN</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            <h1 class="logo me-auto"><a href="#">SPK-SEMEN</a></h1>
 
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#daftar-produk">Daftar Produk</a></li>
+                    <li><a class="nav-link scrollto" href="#daftar-produk">Produk</a></li>
                     <li><a class="nav-link scrollto" href="#Halaman-Rekomendasi">Rekomendasi</a></li>
-                    {{-- <li><a class="nav-link   scrollto" href="#portfolio">Portfolio</a></li>
-                    <li><a class="nav-link scrollto" href="#team">Team</a></li> --}}
-                    {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li> --}}
+                    <li><a class="nav-link scrollto" href="#Hasil-Rekomendasi">Hasil Rekomendasi</a></li>
+                    <li><a class="nav-link scrollto" href="#skills">Tentang</a></li>
                     <li><a class="getstarted scrollto" href="{{ route('login') }}">Login as Admin</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-
         </div>
     </header><!-- End Header -->
 
@@ -92,11 +69,6 @@
                     data-aos="fade-up" data-aos-delay="200">
                     <h1>Sistem Pendukung Keputusan</h1>
                     <h2>Metode Simple Additive Weighting</h2>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                        {{-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
-                                class="bi bi-play-circle"></i><span>Watch Video</span></a> --}}
-                    </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
                     <img src="{{ asset('Arsha/assets/img/hero-img.png') }}" class="img-fluid animated" alt="">
@@ -119,27 +91,27 @@
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('Arsha/assets/img/clients/client-2.png') }}" class="img-fluid"
+                        <img src="{{ asset('Arsha/assets/img/clients/laravel_logo_icon.png') }}" class="img-fluid"
                             alt="">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('Arsha/assets/img/clients/client-3.png') }}" class="img-fluid"
+                        <img src="{{ asset('Arsha/assets/img/clients/pusathosting-logo-2016.png') }}" class="img-fluid"
                             alt="">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('Arsha/assets/img/clients/client-4.png') }}" class="img-fluid"
+                        <img src="{{ asset('Arsha/assets/img/clients/visual_studio_code.png') }}" class="img-fluid"
                             alt="">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('Arsha/assets/img/clients/client-5.png') }}" class="img-fluid"
+                        <img src="{{ asset('Arsha/assets/img/clients/overleaf.png') }}" class="img-fluid"
                             alt="">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('Arsha/assets/img/clients/client-6.png') }}" class="img-fluid"
+                        <img src="{{ asset('Arsha/assets/img/clients/GitHub-logo.png') }}" class="img-fluid"
                             alt="">
                     </div>
 
@@ -147,45 +119,6 @@
 
             </div>
         </section><!-- End Cliens Section -->
-
-        <!-- ======= About Us Section ======= -->
-        {{-- <section id="#" class="about">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>About Us</h2>
-                </div>
-
-                <div class="row content">
-                    <div class="col-lg-6">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
-                        <ul>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat</li>
-                            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in
-                                voluptate velit</li>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0">
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <a href="#" class="btn-learn-more">Learn More</a>
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End About Us Section --> --}}
 
         <!-- ======= Daftar Produk Section ======= -->
         <section id="daftar-produk" class="about">
@@ -212,7 +145,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->nama_semen }}</td>
-                                <td><img src="{{ asset("gambar-semen/{$data->gambar_semen}") }}" width="60">
+                                <td><img src="{{ asset("gambar-semen/{$data->gambar_semen}") }}" width="50">
                                 </td>
                                 <td>{{ $data->harga_semen }}</td>
                                 <td>{{ $data->tekstur_semen }}</td>
@@ -225,13 +158,46 @@
 
         </section><!-- End About Us Section -->
 
-        <!-- ======= Halaman Rekomendasi Section ======= -->
+        <!-- ======= Halaman Rekomendasi Default ======= -->
+        <section id="Rekomendasi-Default" class="about">
+            <div class="container" data-aos="fade-up">
 
+                <div class="section-title">
+                    <h2>Halaman Lihat Rekomendasi</h2>
+                </div>
+
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Kriteria</th>
+                            <th>Attribut</th>
+                            <th>Bobot</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php
+                            $no = 1;
+                        @endphp
+                        @foreach ($KriteriaList as $row)
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $row->nama_kriteria }}</td>
+                                <td>{{ $row->attribut }}</td>
+                                <td>{{ $row->bobot }}</td>
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+        </section><!-- Halaman Rekomendasi Default -->
+
+        <!-- ======= Halaman Rekomendasi Section ======= -->
         <section id="Halaman-Rekomendasi" class="about">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Halaman Rekomendasi</h2>
+                    <h2>Input Rekomendasi</h2>
                 </div>
 
                 @foreach ($KriteriaList as $kriteria)
@@ -239,9 +205,9 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label for="nama">Nama Kriteria</label>
-                            <input type="text" class="form-control @error('nama_kriteria') is-invalid @enderror"
-                                name="nama_kriteria" value="{{ $kriteria->nama_kriteria }}">
+                            <label for="nama">Nama Kriteria {{ $kriteria->nama_kriteria }} </label>
+                            <input type="text" class="form-control" name="nama_kriteria"
+                                value="{{ $kriteria->nama_kriteria }}">
 
                             @error('nama_kriteria')
                                 <div class="invalid-feedback" role="alert">
@@ -250,9 +216,10 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="nama">Attribut Kriteria</label>
+                            <label for="nama">Attribut Kriteria {{ $kriteria->nama_kriteria }}</label>
                             <select name="attribut" id="attribut" class="form-control" required>
-                                <option {{ $kriteria->attribut == 'Benefit' ? 'selected' : '' }}>Benefit</option>
+                                <option {{ $kriteria->attribut == 'Benefit' ? 'selected' : '' }}>Benefit
+                                </option>
                                 <option {{ $kriteria->attribut == 'Cost' ? 'selected' : '' }}>Cost</option>
                             </select>
 
@@ -263,9 +230,21 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="nama">Bobot Kriteria</label>
-                            <input type="text" class="form-control @error('bobot') is-invalid @enderror"
-                                name="bobot" value="{{ $kriteria->bobot }}">
+                            <label for="nama">Bobot Kriteria {{ $kriteria->nama_kriteria }}</label>
+                            <select name="bobot" id="bobot" class="form-control" required>
+                                <option value="5" {{ $kriteria->bobot == '5' ? 'selected' : '' }}>Sangat
+                                    Penting
+                                </option>
+                                <option value="4" {{ $kriteria->bobot == '4' ? 'selected' : '' }}>Penting
+                                </option>
+                                <option value="3" {{ $kriteria->bobot == '3' ? 'selected' : '' }}>Netral
+                                </option>
+                                <option value="2" {{ $kriteria->bobot == '2' ? 'selected' : '' }}>Tidak Penting
+                                </option>
+                                <option value="1" {{ $kriteria->bobot == '1' ? 'selected' : '' }}>Sangat Tidak
+                                    Penting
+                                </option>
+                            </select>
 
                             @error('bobot')
                                 <div class="invalid-feedback" role="alert">
@@ -277,55 +256,108 @@
                     </form>
                 @endforeach
             </div>
+        </section><!-- Halaman Rekomendasi Section -->
+
+        <!-- ======= Halaman Hasil Section ======= -->
+        <section id="Hasil-Rekomendasi" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Hasil Penilaian</h2>
+                </div>
+
+                <div class="row content">
+                    <div class="col-lg-6">
+                        <p>
+                            Langkah dalam menentukan hasil penilaian dalam Simple Additive Weighting.
+                        </p>
+                        <ul>
+                            <li><i class="ri-check-double-line"></i> Langkah 1 : Buat matriks keputusan yang berisi
+                                semua
+                                alternatif yang akan dievaluasi dan nilai-nilai kriteria yang sesuai untuk setiap
+                                alternatif.</li>
+                            <li><i class="ri-check-double-line"></i> Langkah 2 : Normalisasikan matriks keputusan
+                                dengan mengubah
+                                nilai-nilai dalam matriks menjadi skala relatif antara 0 dan 1. Hal ini dapat dilakukan
+                                dengan menggunakan teknik normalisasi seperti Min-Max atau Skala Preferensi.</li>
+                            <li><i class="ri-check-double-line"></i> Langkah 3 : Urutkan alternatif berdasarkan nilai
+                                total dari
+                                yang tertinggi hingga terendah. Alternatif dengan nilai total tertinggi akan dianggap
+                                sebagai pilihan terbaik berdasarkan kriteria yang telah ditentukan.</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+                        <p>
+                            Itulah langkah-langkah dalam penggunaan algoritma Simple Additive Weighting. Hasilnya dapat
+                            langsung dilihat melalui link ini.
+                        </p>
+                        <a href="{{ route('perhitungan.index') }}" class="btn-learn-more">Lihat Hasil Rekomendasi</a>
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- ======= End Halaman Hasil Section ======= -->
 
+        <!-- ======= Skills Section ======= -->
+        <section id="skills" class="skills">
+            <div class="container" data-aos="fade-up">
 
+                <div class="row">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+                        <img src="{{ asset('Arsha/assets/img/Giovanni.png') }}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+                        <h3>Tentang Saya</h3>
+                        <p class="fst-italic">
+                            Giovanni Kurniawan - 00000028665
+                        </p>
+                        <p>
+                            Saya adalah seorang profesional yang berpengalaman dan berdedikasi dalam industri ini. Saya
+                            memiliki pengetahuan yang mendalam dan keterampilan yang kuat dalam bidang ini, dan saya
+                            selalu siap untuk menghadapi tantangan baru.
+                        </p>
 
-        {{-- 
-                @foreach ($KriteriaList as $item)
-                    <form action="{{ route('kriteria.update', $item->id) }}" method="post">
-                        @csrf
-                        @method('put')
-                        <div class="form-group">
-                            <label for="nama">Nama Kriteria</label>
-                            <input type="text" class="form-control @error('nama_kriteria') is-invalid @enderror"
-                                name="nama_kriteria" value="{{ $item->nama_kriteria }}">
+                        <div class="skills-content">
 
-                            @error('nama_kriteria')
-                                <div class="invalid-feedback" role="alert">
-                                    {{ $message }}
+                            <div class="progress">
+                                <span class="skill">HTML <i class="val">100%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="100"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="nama">Attribut Kriteria</label>
-                            <select name="attribut" id="attribut" class="form-control" required>
-                                <option {{ $item->attribut == 'Benefit' ? 'selected' : '' }}>Benefit</option>
-                                <option {{ $item->attribut == 'Cost' ? 'selected' : '' }}>Cost</option>
-                            </select>
+                            </div>
 
-                            @error('attribut')
-                                <div class="invalid-feedback" role="alert">
-                                    {{ $message }}
+                            <div class="progress">
+                                <span class="skill">CSS <i class="val">90%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="nama">Bobot Kriteria</label>
-                            <input type="text" class="form-control @error('bobot') is-invalid @enderror"
-                                name="bobot" value="{{ $item->bobot }}">
+                            </div>
 
-                            @error('bobot')
-                                <div class="invalid-feedback" role="alert">
-                                    {{ $message }}
+                            <div class="progress">
+                                <span class="skill">JavaScript <i class="val">75%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="75"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                            @enderror
+                            </div>
+
+                            <div class="progress">
+                                <span class="skill">Photoshop <i class="val">55%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="55"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
                         </div>
-                @endforeach
-                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Kirim
-                </button>
-                <button type="reset" class="btn btn-danger"><i class="fa fa-repeat"></i> Reset </button>
-                </form> --}}
+
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Skills Section -->
 
 
     </main><!-- End #main -->
@@ -335,67 +367,12 @@
 
         <div class="footer-top">
             <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Arsha</h3>
-                        <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Social Networks</h4>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-                        <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
 
-        <div class="container footer-bottom clearfix">
+        <div class="container text-center footer-bottom clearfix">
             <div class="copyright">
-                &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                &copy; Copyright <strong><span>Giovanni Kurniawan-00000028665</span></strong>. All Rights Reserved 2023
             </div>
         </div>
     </footer><!-- End Footer -->

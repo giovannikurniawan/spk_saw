@@ -91,11 +91,11 @@
                                         <button class="btn btn-primary btn-user btn-block">Login</button>
                                     </form>
                                     <hr>
-                                    <div class="text-center">
+                                    {{-- <div class="text-center">
                                         <a class="small" href="{{ route('register') }}">Don't have an account yet?
                                             Sign
                                             Up</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

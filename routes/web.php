@@ -34,8 +34,3 @@ Route::get('/perhitungan', 'AlgoritmaController@index')->name('perhitungan.index
 Route::get('/halaman-admin', 'HalamanAdminController@index');
 // Route::get('/halaman-admin-add', 'HalamanAdminController@add');
 Route::resource("/","WelcomeController");
-// Route::put("/","WelcomeController")->except(['create']);
-// Route::get('/', 'WelcomeController@index');
-// Route::get('/', 'WelcomeController@store');
-// Route::get('/halaman-rekomendasi', 'WelcomeController@index');
-
